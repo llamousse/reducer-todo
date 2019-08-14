@@ -16,9 +16,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Reducer To-Do List</h1>
+      <h3>To-Do List (Reducer Refactored)</h3>
+      <TodoForm dispatch={dispatch}/>
       <TodoList todo={state.todos} dispatch={dispatch} />
-      {/* <TodoForm dispatch={dispatch}/> */}
     </div>
   );
 }

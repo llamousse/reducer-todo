@@ -1,9 +1,16 @@
 export const initialState = {
-    todos: [{
-        item: 'Learn about reducers',
-        completed: false,
-        id: 3892987589
-    }]
+    todos: [
+        {
+            item: 'Learn about reducers',
+            completed: false,
+            id: 3892987589
+        },
+        {
+            item: 'Learn about redux',
+            completed: false,
+            id: 3892987590
+        }
+    ]
 };
   
 export const todoReducer = (state, action) => {
@@ -23,14 +30,14 @@ export const todoReducer = (state, action) => {
                 })
             };
 
-        // case 'ADD_TASK':
-        //     const newTask = {
-        //         task: action.payload,
-        //         completed: false,
-        //         id: Date.now()
-        //     };
-        //     // console.log(newTask)
-        //     return {...state, todos: [...state.todos, newTask]};
+        case 'ADD_TASK':
+            const addTask = {
+                task: action.payload,
+                completed: false,
+                id: Date.now()
+            };
+            // console.log(addTask)
+            return {...state, todos: [...state.todos, addTask]};
 
         // case 'TODO_COMPLETE':
         //     return {
