@@ -9,11 +9,14 @@ const TodoList = (props) => {
                     <Todo key={item.id} todo={item} dispatch={props.dispatch} />
                 ))}
             </div>
-            <button className="clear">Clear Completed</button>
+            <button 
+                className="clear"
+                onClick={() => props.dispatch({ type: "TODO_COMPLETE" })}
+            >
+                Clear Completed
+            </button>
         </>
     );
 };
 
 export default TodoList;
-
-// onClick={() => props.dipatch({ type: "TODO_COMPLETE" })}

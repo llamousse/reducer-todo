@@ -36,14 +36,11 @@ export const todoReducer = (state, action) => {
                 completed: false,
                 id: Date.now()
             };
-            // console.log(addTask)
             return {...state, todos: [...state.todos, addTask]};
 
-        // case 'TODO_COMPLETE':
-        //     return {
-        //         ...state,
-        //         completed: true
-        //     };
+        case 'TODO_COMPLETE':
+            return {...state, todos: [...state.todos.filter(item => !item.completed)]};
+
         default:
             return state;
     }
